@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:sheet xmlns:ns2="http://www.figures.org/sheet" Max_z_index="3" z_index="-1" line_width="1">
+    <x>0</x>
+    <y>0</y>
+    <color>0x000000ff</color>
+    <fill>0xffffffff</fill>
+    <shapelist>
+        <shape xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="composite" Max_z_index="0" z_index="-2" line_width="1">
+            <x>0</x>
+            <y>0</y>
+            <color>0x000000ff</color>
+            <fill>0xffffffff</fill>
+            <shapelist/>
+        </shape>
+        <shape xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="line" z_index="1" line_width="1">
+            <x>0</x>
+            <y>0</y>
+            <color>0x000000ff</color>
+            <fill>0xffffffff</fill>
+            <A>
+                <x>205</x>
+                <y>469</y>
+            </A>
+            <B>
+                <x>322</x>
+                <y>87</y>
+            </B>
+        </shape>
+        <shape xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="line" z_index="2" line_width="1">
+            <x>0</x>
+            <y>0</y>
+            <color>0x000000ff</color>
+            <fill>0xffffffff</fill>
+            <A>
+                <x>323</x>
+                <y>86</y>
+            </A>
+            <B>
+                <x>439</x>
+                <y>468</y>
+            </B>
+        </shape>
+        <shape xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="line" z_index="3" line_width="1">
+            <x>0</x>
+            <y>0</y>
+            <color>0x000000ff</color>
+            <fill>0xffffffff</fill>
+            <A>
+                <x>205</x>
+                <y>471</y>
+            </A>
+            <B>
+                <x>439</x>
+                <y>466</y>
+            </B>
+        </shape>
+    </shapelist>
+</ns2:sheet>

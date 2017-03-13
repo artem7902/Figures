@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.figures.org/shape" version="1.0">
+
+  <xs:import schemaLocation="schema3.xsd"/>
+
+  <xs:complexType abstract="true" name="shape">
+    <xs:complexContent>
+      <xs:extension base="point">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="color" type="xs:string"/>
+          <xs:element minOccurs="0" name="fill" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="z_index" type="xs:int" use="required"/>
+        <xs:attribute name="line_width" type="xs:int" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

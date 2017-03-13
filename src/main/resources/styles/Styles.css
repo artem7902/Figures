@@ -1,0 +1,75 @@
+.root{
+    -fx-background-color: white;
+}
+.button {
+    -fx-font-weight: bold;
+    -fx-text-alignment:center;
+    -fx-alignment:top-center;
+}
+#hbox{
+   -fx-border-color:black;
+   -fx-border-width: 1;
+   -fx-border-style: solid;
+   -fx-spacing: 15;
+   -fx-padding: 0 0 0 15;
+   -fx-alignment:center-left;
+}
+#vbox{
+    -fx-padding:10 0 0 0;
+    -fx-border-color:black;
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+    -fx-alignment:top-center;
+    -fx-spacing: 10;
+    -fx-background-color: orange;
+}
+#hbox2{
+   -fx-border-color:black;
+   -fx-border-width: 1;
+   -fx-border-style: solid;
+   -fx-spacing: 15;
+   -fx-padding: 0 0 0 5;
+   -fx-alignment:center-left;
+}
+#hbox2 .text-field{
+    
+}
+#vbox .button:focused{
+    -fx-border-style: solid;
+    -fx-border-color: lightskyblue;
+    -fx-border-radius: 2;
+    -fx-border-width: 2;
+}
+#vbox .button{
+       -fx-background-color:rgb(240,240,240);
+       -fx-max-width:86;
+       -fx-background-repeat:no-repeat; 
+       -fx-alignment: center;
+}
+#Line_Button{
+   -fx-background-image:url('../images/1.png');
+}
+#PolyLine_Button{
+   -fx-background-image:url('../images/2.png');
+}
+#Polygon_Button{
+   -fx-background-image:url('../images/3.png');
+}
+#Bow_Button{
+   -fx-background-image:url('../images/4.png');
+}
+#Circle_Button{
+   -fx-background-image:url('../images/5.png');
+}
+#Triangle_Button{
+   -fx-background-image:url('../images/6.png');
+}
+#Rectangle_Button{
+   -fx-background-image:url('../images/7.png');
+}
+#Qa_Bezier{
+   -fx-background-image:url('../images/8.png');
+}
+#Cub_Bezier{
+   -fx-background-image:url('../images/9.png');
+}

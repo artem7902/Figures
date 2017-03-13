@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.figures.org/shape">
+
+  <xs:import namespace="http://www.figures.org/shape" schemaLocation="schema2.xsd"/>
+
+  <xs:complexType name="sheet">
+    <xs:complexContent>
+      <xs:extension base="composite">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="composite">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="shapelist" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="shape" type="ns1:shape" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Max_z_index" type="xs:int" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="point">
+    <xs:sequence>
+      <xs:element name="x" type="xs:int"/>
+      <xs:element name="y" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="line">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="A" type="point"/>
+          <xs:element name="B" type="point"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="PolyLine">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="plist">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="point" type="point" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="polygon">
+    <xs:complexContent>
+      <xs:extension base="PolyLine">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="bow">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="height" type="xs:int"/>
+          <xs:element name="width" type="xs:int"/>
+          <xs:element name="start_angle" type="xs:double"/>
+          <xs:element name="arcExtent" type="xs:double"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="circle">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="R" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="rectangle">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="height" type="xs:int"/>
+          <xs:element name="width" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="triangle">
+    <xs:complexContent>
+      <xs:extension base="polygon">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="bezier">
+    <xs:complexContent>
+      <xs:extension base="ns1:shape">
+        <xs:sequence>
+          <xs:element name="plist">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="point" type="point" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="cubicBezier">
+    <xs:complexContent>
+      <xs:extension base="bezier">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
+

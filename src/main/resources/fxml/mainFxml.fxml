@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import ua.cn.al.teach.util.CustomMenuPane?>
+<BorderPane id="rootpane" prefHeight="750" prefWidth="750" xmlns:fx="http://javafx.com/fxml" fx:controller="ua.cn.al.teach.figures.FXMLController" >
+    <top>
+                    <HBox fx:id="hbox" prefHeight="40">
+                    <Button text="New Canvas" onAction="#NewCanva" fx:id="New" />
+                    <Button text="Save Canvas" onAction="#SaveFile" fx:id="Save" />
+                    <Button text="Load Canvas" onAction="#LoadFile" fx:id="Load" />
+        </HBox>
+                </top>
+    <center>           
+        <Canvas fx:id="MyCanva" width="615" height="705" onContextMenuRequested="#showMenu"/>
+         </center>
+         <right>
+        <VBox fx:id="vbox" prefWidth="130">
+                    <Button text="Select" onAction="#Press_vbox_button" fx:id="Select_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Line_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="PolyLine_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Polygon_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Bow_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Circle_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Triangle_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Rectangle_Button" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Qa_Bezier" />
+                    <Button text="" onAction="#Press_vbox_button" fx:id="Cub_Bezier" />
+                    <Label text="Color:"/>
+                    <ColorPicker fx:id="colorpick1" onAction="#ColorSelect" />
+                    <Label text="Fill Color:"/>
+                    <ColorPicker fx:id="colorpick2" onAction="#FillSelect"/>
+                    <Label text="LineWidth:"/>
+                    <Pagination fx:id="pageNav1" maxWidth="40"  pageCount="100" onMouseClicked="#LWidthChange"/>
+                    <Label fx:id="ZIndexLabel" text="Z-Index:" visible="false"/>
+                    <Pagination fx:id="pageNav2" maxWidth="40" visible="false" pageCount="1000000" onMouseClicked="#ZIndexChange"/>
+        </VBox>
+        </right>
+        <bottom>
+            <HBox fx:id="hbox2" prefHeight="20">
+                     <Label fx:id="FirsLabBottom"/>
+                     <Slider fx:id="FirstSlider" blockIncrement="1" value="10" min="1" max="2000"  maxWidth="150" visible="false" onValueChange="#FSliderChange"/>
+                     <Label fx:id="FValueLable"/>
+                     <Label fx:id="SecondLabBottom"/>
+                     <Slider  fx:id="SecondSlider" blockIncrement="1" value="10" min="1" max="2000"  maxWidth="150" visible="false" onValueChange="#SSliderChange"/>
+                     <Label fx:id="SValueLable"/>
+        </HBox>
+        </bottom>
+           <CustomMenuPane>
+            <contextMenu>
+                <ContextMenu fx:id="menu">
+                    <items>
+                        <MenuItem text="Delete" onAction="#Del"/>
+                        <MenuItem text="Group" onAction="#Group" />
+                        <MenuItem text="Ungroup" onAction="#Ungroup"/>
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+            </CustomMenuPane>
+</BorderPane>
