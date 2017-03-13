@@ -79,6 +79,7 @@ public class PolyLine extends Shape implements Serializable {
         TempCircle.SetFillForAll(javafx.scene.paint.Color.BLUE);
     }
     public void removePoint(int position){
+   if(plist.size()>position)
     plist.remove(position);
     }
 }

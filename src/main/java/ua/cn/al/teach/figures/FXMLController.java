@@ -387,8 +387,9 @@ public class FXMLController implements Initializable, Serializable {
             if (e.getButton() == MouseButton.SECONDARY) {
                 if (prev_shapes != null && TypeChecker.CurType!=ShapeType.PolyLine && TypeChecker.CurType!=ShapeType.Polygon)
                     ShapesList.delete(prev_shapes);
-                else if(prev_shapes != null)
+                else if(prev_shapes != null){
                 ((PolyLine)prev_shapes).removePoint(TempPoinst_List.size());
+                }
                 prev_shapes = null;
                 TempPoinst_List.clear();
             }
@@ -458,5 +459,8 @@ public class FXMLController implements Initializable, Serializable {
             }
             ShapesList.show(ge);
         });
+                StateStack.XMLState.push(String.valueOf(StateStack.XMLState.size()+1)+".xml");
+                my_f= new File("./src/main/resources/xml/stack/"+StateStack.XMLState.peek());
+                this.SaveFile();
     }
 }
